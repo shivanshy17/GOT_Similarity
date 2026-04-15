@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoT Character Galaxy | 3D t-SNE</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://unpkg.com/three@0.136.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three-spritetext@1.6.5/dist/three-spritetext.min.js"></script>
+    <script src="https://unpkg.com/3d-force-graph@1.70.10/dist/3d-force-graph.min.js"></script>
+</head>
+<body>
+    <div id="ui-layer">
+        <div id="header">
+            <h1>VALAR MORGHULIS</h1>
+            <p>Dialogue Cluster Analysis | 3D t-SNE</p>
+        </div>
+
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search Character (e.g. Jon Snow)..." autocomplete="off">
+            <div id="suggestions"></div>
+        </div>
+
+        <div id="info-panel">
+            <div id="status-light"></div>
+            <h2 id="char-name">CRYSTAL SEARCH</h2>
+            <div id="char-desc">Awaiting linguistic input... Select a character in the galaxy to begin.</div>
+            <div id="stats"></div>
+        </div>
+
+        <div id="dashboard">
+            <div class="dash-item">
+                <span class="label">System Status</span>
+                <span class="value" style="color: #2ecc71;">Active</span>
+            </div>
+            <div class="dash-item">
+                <span class="label">Analysis Depth</span>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            <div class="dash-section">
+                <span class="label">Linguistic Overview</span>
+                <p id="total-count">Initializing Nodes...</p>
+            </div>
+            <div id="cluster-preview">
+                </div>
+        </div>
+        
+        <div id="legend">
+            <p>Clustered by linguistic similarity in 3D vector space.</p>
+        </div>
+    </div>
+
+    <div id="3d-graph"></div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
